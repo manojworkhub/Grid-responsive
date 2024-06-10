@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>flex and grid</title>
+    <style>
+        :root {
+            --red: crimson;
+            --green: #53BF9D;
+            --yellow: #FFC54D;
+            --white: whitesmoke;
+        }
+
+        body,
+        * {
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        header {
+            display: flex;
+
+            padding: 20px;
+            align-items: center;
+            font-weight: bolder;
+
+        }
+
+        header a {
+            color: var(--yellow);
+        }
+
+        .logo {
+            text-transform: uppercase;
+            flex: 3;
+            font-size: 2em;
+
+        }
+
+        .logo a {
+            font-size: 1.25em;
+            text-decoration: none;
+
+        }
+
+        header nav {
+            flex: 2;
+
+            display: flex;
+
+            align-items: center;
+            text-transform: uppercase;
+            /* border: 2px solid green; */
+
+
+        }
+
+        nav div {
+            flex: 1;
+            /* border: 2px solid red; */
+            max-width: 600px;
+            padding: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .bodybase {
+            background-image: url(./pexels-jessica-lewis-858094.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 150vh;
+
+        }
+
+        .maintxt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2em;
+            margin-top: 10em;
+            align-items: center;
+
+        }
+
+        .maintxt div {
+            margin-top: 1em;
+        }
+
+        .bigtitle {
+            font-size: 3em;
+            font-weight: bolder;
+            color: var(--red);
+        }
+
+        .title2 {
+            color: var(--yellow);
+
+        }
+
+        .callus {
+            color: var(--white);
+        }
+
+        .maintxt button {
+
+            padding: 20px;
+            text-transform: uppercase;
+            font-weight: bolder;
+            border-radius: 2em;
+            border-color: var(--green);
+            background-color: var(--green);
+            color: var(--white);
+            font-size: 1em;
+            margin-top: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--yellow);
+            color: var(--green);
+        }
+
+        .mt {
+            color: var(--red);
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
+            text-transform: uppercase;
+        }
+
+        .menu {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
+        }
+
+        table {
+            width: 100%;
+            padding: 1em;
+
+        }
+
+        .menu th {
+            font-size: 2em;
+            color: var(--green);
+        }
+
+        .menu tr {
+            display: flex;
+            justify-content: center;
+            margin-top: .8em;
+        }
+
+        .menu td:nth-child(1) {
+            flex: 0.7;
+            justify-self: left;
+        }
+
+        .menu td:nth-child(2) {
+            justify-self: right;
+        }
+
+        .lt {
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+            color: var(--red);
+            font-size: 1.25em;
+            padding: 20px;
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
+        }
+
+        #loctable .base {
+            color: var(--white);
+            text-transform: uppercase;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
+        }
+
+        .base div {
+            padding: 20px;
+        }
+
+        #loctable address {
+            margin-top: 1em;
+        }
+
+        #loctable h2 {
+            color: var(--green);
+        }
+
+        footer {
+
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(53, 52, 52));
+        }
+
+        footer ul li {
+            display: inline-block;
+            background-color: red;
+            width: 10px;
+            height: 10px;
+            justify-content: center;
+        }
+
+        #csr {
+            width: 10%;
+            padding: 0.2em;
+            color: var(--white);
+            text-transform: uppercase;
+            border: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bodybase">
+        <div id="frame">
+            <header>
+                <div class="logo">
+                    <a href=""> logo's</a>
+                </div>
+                <nav>
+                    <div><a href=""> home</a></div>
+                    <div><a href="">about</a></div>
+                    <div><a href="">status</a></div>
+                </nav>
+            </header>
+            <div class="maintxt">
+                <div class="bigtitle"> Finest Treat for Your Taste Buds</div>
+                <div class="title2"> Freshest Ingredients Guranteed
+                </div>
+                <div class="callus"> Call us @+91 1234567890 </div>
+                <button> order online</button>
+            </div>
+        </div>
+    </div>
+    <div class="mt">
+        <h1>menu</h1>
+    </div>
+    <div class="menu">
+
+        <div class="h1menu">
+            <table>
+
+                <th colspan="2">Starters</th>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    <td>&#8377 180</td>
+                </tr>
+                <tr>
+                    <td>Gobi 65</td>
+                    <td>&#8377 165</td>
+                </tr>
+                <tr>
+                    <td>Veg Pakoda</td>
+                    <td>&#8377 160</td>
+                </tr>
+                <tr>
+                    <td>Mirchi Bajji</td>
+                    <td>&#8377 155</td>
+                </tr>
+                <tr>
+                    <td>Chilli Gobi</td>
+                    <td>&#8377 170</td>
+                </tr>
+                <tr>
+                    <td>Baby Corn Manchurian</td>
+                    <td>&#8377 185</td>
+                </tr>
+                <tr>
+                    <td>Chilli Paneer</td>
+                    <td>&#8377 190</td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="h2menu">
+            <table>
+
+                <th colspan="2">Main Course</th>
+                <tr>
+                    <td>Veg Fried Rice</td>
+                    <td>&#8377 340</td>
+                </tr>
+                <tr>
+                    <td>Schezwan Fried Rice</td>
+                    <td>&#8377 350</td>
+                </tr>
+                <tr>
+                    <td>Veg Biriyani</td>
+                    <td>&#8377 370</td>
+                </tr>
+                <tr>
+                    <td>Paneer Biriyani</td>
+                    <td>&#8377 390</td>
+                </tr>
+                <tr>
+                    <td>Mushroom Biriyani</td>
+                    <td>&#8377 385</td>
+                </tr>
+                <tr>
+                    <td>Veg Noodels</td>
+                    <td>&#8377 360</td>
+                </tr>
+                <tr>
+                    <td>Schezwan Noodles</td>
+                    <td>&#8377 370</td>
+                </tr>
+                <tr>
+                    <td>Veg Pulav</td>
+                    <td>&#8377 340</td>
+                </tr>
+                <tr>
+                    <td>Kashmiri Pulav</td>
+                    <td>&#8377 370</td>
+                </tr>
+                <tr>
+                    <td>Sambar Rice</td>
+                    <td>&#8377 280</td>
+                </tr>
+                <tr>
+                    <td>Curd Rice</td>
+                    <td>&#8377 210</td>
+                </tr>
+
+
+            </table>
+        </div>
+        <div class="h3menu">
+            <table>
+
+                <th colspan="2">Chats</th>
+                <tr>
+                    <td>Samosa</td>
+                    <td>&#8377 120</td>
+                </tr>
+                <tr>
+                    <td>Pani Poori</td>
+                    <td>&#8377 170</td>
+                </tr>
+                <tr>
+                    <td>Masala Puri</td>
+                    <td>&#8377 160</td>
+                </tr>
+                <tr>
+                    <td>Pav Baaji</td>
+                    <td>&#8377 155</td>
+                </tr>
+                <tr>
+                    <td>Bhel Puri</td>
+                    <td>&#8377 160</td>
+                </tr>
+                <tr>
+                    <td>vada pav</td>
+                    <td>&#8377 165</td>
+                </tr>
+                <tr>
+                    <td>Raj Kachori - Best Seller</td>
+                    <td>&#8377 190</td>
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    <div class="lt">
+        <h2>location</h2>
+    </div>
+    <div id="loctable">
+
+        <div class="base">
+            <div class="annanagur">
+                <h2>anna nagar</h2>
+                <address>
+                    15, 10th Main Road</br>
+                    Anna Nagar,</br>
+                    Chennai - 600102
+                </address>
+            </div>
+            <div class="velachari">
+                <h2>velachari</h2>
+                <address>
+                    5, 3rd Cross Road,</br>
+                    Vijaya Nagar,</br>
+                    Velachery,</br>
+                    Chennai - 600042
+                </address>
+            </div>
+            <div class="thambarum">
+                <h2>thambarum</h2>
+                <address>
+                    145, MIT Road,</br>
+                    Tambaram,</br>
+                    Chennai - 600045
+                </address>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="social-media"></div>
+        <ul>
+            <li><a href="#" target="blank"><i class="fab fa-facebook"></i></i></a></li>
+            <li><a href="#" target="blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" target="blank"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+        <marquee behavior="alternate" direction="">
+            <div id="csr">&#169 copy right </div>
+        </marquee>
+
+    </footer>
+
+
+
+</body>
+
+</html>
